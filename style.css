@@ -5,13 +5,8 @@
     --yellow-bg: #FEF9C3;
     --cyan-box: #67E8F9;
     --lavender-box: #f3e8ff;
-    /* Soft lavender for the main sections */
     --text-black: #000000;
 }
-
-/* =========================
-   PRINT (FIXED 1-PAGE PDF)
-   ========================= */
 @media print {
   @page { size: A4; margin: 0; }
 
@@ -37,12 +32,6 @@
   }
 }
 
-
-
-
-/* =========================
-   NORMAL STYLES (UNCHANGED)
-   ========================= */
 * {
     margin: 0;
     padding: 0;
@@ -66,8 +55,6 @@ body {
     position: relative;
     overflow: hidden;
 }
-
-/* Sidebar Styling */
 .sidebar {
     width: 38%;
     background-color: white;
@@ -75,7 +62,6 @@ body {
     display: flex;
     flex-direction: column;
     gap: 40px;
-    /* Increased gap to fill vertical space */
 }
 
 .profile-pic-container {
@@ -89,21 +75,17 @@ body {
     height: 180px;
     border-radius: 50%;
     background-color: #D1E9FF;
-    /* Sky blue background for safety */
     overflow: hidden;
     border: 5px solid white;
     position: relative;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
-
 .profile-pic img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center 15%;
-    /* Shift up to show more head */
     transform: scale(1.1);
-    /* Slight zoom for better focus */
     display: block;
 }
 
@@ -124,7 +106,6 @@ body {
     width: 35px;
     height: 35px;
     flex-shrink: 0;
-    /* Ensures the circle stays the same size */
     background-color: var(--purple-primary);
     border-radius: 50%;
     display: flex;
@@ -149,8 +130,6 @@ body {
 .email-text {
     font-size: 0.8rem !important;
     white-space: nowrap;
-    /* Forces one line */
-    /* Smaller to fit on one line */
     word-break: break-all;
 }
 
@@ -170,8 +149,6 @@ body {
     color: var(--purple-primary);
     font-size: 1.2rem;
 }
-
-/* Main Content Styling */
 .main-content {
     flex: 1;
     background-color: #f7f9fc;
@@ -197,7 +174,6 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #1e293b;
-    /* Slate-800 for better contrast */
 }
 
 .blue-box {
@@ -211,7 +187,6 @@ body {
 .profile-row {
     display: flex;
     flex-direction: column;
-    /* Stacked horizontally */
     gap: 25px;
     margin-bottom: 40px;
 }
@@ -237,7 +212,6 @@ body {
     bottom: 0;
     left: 0;
     width: 100%;
-    /* Adaptive width */
     height: 2px;
     background-color: var(--purple-light);
 }
@@ -287,7 +261,6 @@ body {
     background-color: var(--lavender-box);
     padding: 20px 30px;
     border-radius: 40px;
-    /* Pillow/pill shape */
     margin-top: 10px;
     margin-bottom: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
@@ -327,3 +300,38 @@ body {
 .primary-box {
   padding: 15px 25px;
 }
+/* =========================
+   MOBILE VIEW FIX (HTML ONLY)
+   ========================= */
+@media (max-width: 768px) {
+  body {
+    padding: 0;
+  }
+
+  .cv-container {
+    width: 100%;
+    min-height: auto;
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .main-content {
+    padding: 20px;
+  }
+
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+  }
+
+  .header-box {
+    width: 100%;
+    font-size: 0.9rem;
+  }
+}
+
+
