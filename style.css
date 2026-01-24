@@ -1,0 +1,329 @@
+:root {
+    --purple-primary: #7C3AED;
+    --purple-light: #B794F4;
+    --blue-bg: #E0F2FE;
+    --yellow-bg: #FEF9C3;
+    --cyan-box: #67E8F9;
+    --lavender-box: #f3e8ff;
+    /* Soft lavender for the main sections */
+    --text-black: #000000;
+}
+
+/* =========================
+   PRINT (FIXED 1-PAGE PDF)
+   ========================= */
+@media print {
+  @page { size: A4; margin: 0; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: white;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .cv-container {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0;
+    box-shadow: none;
+    border: none;
+  }
+  .associative-section {
+    break-inside: avoid;
+    page-break-before: avoid;
+    margin-top: -15px;
+  }
+}
+
+
+
+
+/* =========================
+   NORMAL STYLES (UNCHANGED)
+   ========================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.cv-container {
+    width: 210mm;
+    min-height: 297mm;
+    background-color: #ffffff;
+    display: flex;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 38%;
+    background-color: white;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    /* Increased gap to fill vertical space */
+}
+
+.profile-pic-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #D1E9FF;
+    /* Sky blue background for safety */
+    overflow: hidden;
+    border: 5px solid white;
+    position: relative;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.profile-pic img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 15%;
+    /* Shift up to show more head */
+    transform: scale(1.1);
+    /* Slight zoom for better focus */
+    display: block;
+}
+
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 12px;
+}
+
+.icon-circle {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+    /* Ensures the circle stays the same size */
+    background-color: var(--purple-primary);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.divider {
+    height: 2px;
+    background-color: var(--purple-light);
+    width: 100%;
+    margin: 15px 0;
+}
+
+.info-item p,
+.languages-section p,
+.interests-section p {
+    font-size: 1rem;
+}
+
+.email-text {
+    font-size: 0.8rem !important;
+    white-space: nowrap;
+    /* Forces one line */
+    /* Smaller to fit on one line */
+    word-break: break-all;
+}
+
+.skills-list {
+    list-style: none;
+}
+
+.skills-list li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 1rem;
+}
+
+.skill-icon {
+    color: var(--purple-primary);
+    font-size: 1.2rem;
+}
+
+/* Main Content Styling */
+.main-content {
+    flex: 1;
+    background-color: #f7f9fc;
+    padding: 40px;
+    position: relative;
+}
+
+.cv-header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.header-box {
+    height: 45px;
+    border-radius: 25px;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #1e293b;
+    /* Slate-800 for better contrast */
+}
+
+.blue-box {
+    background-color: var(--blue-bg);
+}
+
+.yellow-box {
+    background-color: var(--yellow-bg);
+}
+
+.profile-row {
+    display: flex;
+    flex-direction: column;
+    /* Stacked horizontally */
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.profile-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.underline-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    display: inline-block;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.underline-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    /* Adaptive width */
+    height: 2px;
+    background-color: var(--purple-light);
+}
+
+.underline-title.large::after {
+    width: 100%;
+}
+
+.experience-section,
+.education-section,
+.certs-section,
+.associative-section {
+    margin-bottom: 25px;
+}
+
+.exp-item {
+    margin-bottom: 12px;
+}
+
+.exp-item p {
+    font-size: 1.05rem;
+}
+
+.exp-item p.small {
+    font-size: 0.9rem;
+    color: #4b5563;
+    padding-left: 10px;
+}
+
+.cyan-box {
+    background-color: var(--cyan-box);
+    padding: 25px 35px;
+    border-radius: 40px;
+    margin-top: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.cyan-box p,
+.cyan-box ul,
+.primary-box p,
+.primary-box ul,
+.primary-box div {
+    font-size: 0.9rem;
+}
+
+.primary-box {
+    background-color: var(--lavender-box);
+    padding: 20px 30px;
+    border-radius: 40px;
+    /* Pillow/pill shape */
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.education-section p,
+.certs-section p,
+.associative-section p {
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.objective-list {
+    list-style: none;
+    padding: 0;
+}
+
+.objective-list li {
+    margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+    .cv-container {
+        flex-direction: column;
+        height: auto;
+        width: 100%;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .header-box {
+        width: 100%;
+    }
+}
+.primary-box {
+  padding: 15px 25px;
+}
